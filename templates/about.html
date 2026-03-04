@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.icon-box {
+    transition: 0.3s;
+}
+
+.icon-box:hover {
+    transform: translateY(-10px);
+}
+
+.team-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+</style>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-4 fw-bold">About BookLife 📚</h1>
+        <p class="lead">Where every book opens a new world</p>
+    </div>
+</div>
+
+<!-- Our Story -->
+<div class="container section-padding">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2>Our Story</h2>
+            <p>
+                BookLife was created with a passion for reading and knowledge.
+                Our mission is to provide readers with a smooth and enjoyable
+                experience while discovering books in different categories.
+            </p>
+            <p>
+                We believe books inspire, educate, and transform lives.
+                That’s why we built this platform to connect readers with
+                the stories they love.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+                 class="img-fluid rounded shadow"
+                 alt="Books">
+        </div>
+    </div>
+</div>
+
+<!-- Why Choose Us -->
+<div class="bg-light section-padding">
+    <div class="container text-center">
+        <h2 class="mb-5">Why Choose Us?</h2>
+        <div class="row">
+
+            <div class="col-md-4 icon-box">
+                <h4>📚 Wide Collection</h4>
+                <p>Explore Arabic, English, and specialized books in one place.</p>
+            </div>
+
+            <div class="col-md-4 icon-box">
+                <h4>⚡ Easy Shopping</h4>
+                <p>Simple cart system and smooth checkout process.</p>
+            </div>
+
+            <div class="col-md-4 icon-box">
+                <h4>💙 Trusted Service</h4>
+                <p>Your satisfaction is our priority.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Team Section -->
+<div class="container section-padding text-center">
+    <h2 class="mb-5">Our Team</h2>
+    <div class="row justify-content-center">
+
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/120" class="team-img shadow mb-3">
+            <h5>Manar Dhawi</h5>
+            <p class="text-muted">Founder & Developer</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Call To Action -->
+<div class="bg-dark text-white text-center py-5">
+    <h3>Ready to start your reading journey?</h3>
+    <a href="{% url 'home' %}" class="btn btn-warning mt-3">
+        Browse Books 📖
+    </a>
+</div>
+
+{% endblock %}

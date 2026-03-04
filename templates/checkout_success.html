@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h2>✅ Purchase Completed Successfully!</h2>
+    <p>Thank you for shopping with us.</p>
+
+    <a href="{% url 'home' %}" class="btn btn-dark mt-3">
+        Continue Shopping
+    </a>
+</div>
+{% endblock %}

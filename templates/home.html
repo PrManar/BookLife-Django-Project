@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.welcome-sec {
+    background: linear-gradient(rgba(3, 3, 3, 0.6), rgba(51, 51, 51, 0.6)),
+                url("{% static 'shelf.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    border-radius: 15px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: aliceblue;
+}
+</style>
+<div class="container my-5">
+
+   <div class="welcome-sec text-center mb-5">
+      <div class="hero-content">
+         <h1>Welcome to BookLife</h1>
+         <p>Where Books can be shared and live.</p>
+      </div>
+   </div>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- Arabic Books -->
+        <div class="col-md-4">
+            <a href="{% url 'arabic_books' %}" class="card-link">
+                <div class="custom-card">
+                    <div class="img-container">
+                        <img src="{% static 'arbooks.jpg' %}" alt="Arabic Books">
+                    </div>
+                    <div class="card-content">
+                        <h3>Arabic Books</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- English Books -->
+        <div class="col-md-4">
+            <a href="{% url 'english_books' %}" class="card-link">
+                <div class="custom-card">
+                    <div class="img-container">
+                        <img src="{% static 'enbooks.jpg' %}" alt="English Books">
+                    </div>
+                    <div class="card-content">
+                        <h3>English Books</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- E-Books -->
+        <div class="col-md-4">
+            <a href="{% url 'cbooks' %}" class="card-link">
+                <div class="custom-card">
+                    <div class="img-container">
+                        <img src="{% static 'cbooks.jpg' %}" alt="E-Books">
+                    </div>
+                    <div class="card-content">
+                        <h3>Childrens Books</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

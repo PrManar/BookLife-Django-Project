@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container my-5">
+    <h2>Your Cart</h2>
+    <hr>
+
+    {% if cart_items %}
+        {% for item in cart_items %}
+            <div class="mb-3 p-3 border rounded">
+                <h4>{{ item.product.name }}</h4>
+                <p>Price: ${{ item.product.price }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p>Total: ${{ item.total_price }}</p>
+
+                <a href="{% url 'remove_from_cart' item.product.id %}" 
+                   class="btn btn-danger btn-sm">
+                   Remove ❌
+                </a>
+            </div>
+        {% endfor %}
+
+        <h3 class="mt-4">Total: ${{ total }}</h3>
+
+        <div class="mt-3">
+            <a href="{% url 'clear_cart' %}" class="btn btn-warning">
+                Clear Cart 🗑
+            </a>
+
+            <a href="{% url 'checkout' %}" class="btn btn-success">
+                Complete Purchase 💳
+            </a>
+        </div>
+
+    {% else %}
+        <p>No products in cart.</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container my-5">
+
+    <div class="text-center mb-5">
+        <h1>Our English Bookshelf</h1>
+    </div>
+
+    <div class="row g-4">
+
+{% for product in products %}
+  <div class="col-md-4">
+      <div class="custom-card">
+
+        <!-- 👇 IMAGE GOES HERE -->
+        <div class="img-container">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+
+        <div class="card-content">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <h5 class="text-success">${{ product.price }}</h5>
+
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-dark w-100">
+                    Add to Cart 🛒
+                </button>
+            </form>
+        </div>
+
+     </div>
+   </div>
+{% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
